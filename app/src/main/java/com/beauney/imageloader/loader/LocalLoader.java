@@ -25,16 +25,11 @@ public class LocalLoader extends AbsLoader {
         }
         BitmapDecoder decoder = new BitmapDecoder() {
             @Override
-            public Bitmap decodeBitmapWithOption(BitmapFactory.Options options) throws IOException {
+            public Bitmap decodeBitmapWithOption(BitmapFactory.Options options) {
                 return BitmapFactory.decodeFile(path, options);
             }
         };
-        try {
-            return decoder.decodeBitmap(ImageViewHelper.getImageViewWidth(request.getImageView()),
-                    ImageViewHelper.getImageViewHeight(request.getImageView()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return decoder.decodeBitmap(ImageViewHelper.getImageViewWidth(request.getImageView()),
+                ImageViewHelper.getImageViewHeight(request.getImageView()));
     }
 }

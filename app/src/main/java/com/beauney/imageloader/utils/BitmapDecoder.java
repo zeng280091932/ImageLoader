@@ -12,7 +12,7 @@ import java.io.IOException;
  * @since 2020-08-12
  */
 public abstract class BitmapDecoder {
-    public abstract Bitmap decodeBitmapWithOption(BitmapFactory.Options options) throws IOException;
+    public abstract Bitmap decodeBitmapWithOption(BitmapFactory.Options options);
 
     /**
      * 压缩图片
@@ -21,7 +21,7 @@ public abstract class BitmapDecoder {
      * @param reqHeight 指定要缩放后的高度
      * @return
      */
-    public Bitmap decodeBitmap(int reqWidth, int reqHeight) throws IOException {
+    public Bitmap decodeBitmap(int reqWidth, int reqHeight) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         //第一次读流只获取宽高配置信息
